@@ -1,0 +1,78 @@
+<section id="home" class="min-h-screen section-bg pt-24 pb-12 px-6 flex items-center">
+  <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left Content -->
+    <div class="flex flex-col gap-5 animate-fade-up">
+      <div class="flex items-center gap-2 text-[#999] text-sm tracking-widest uppercase">
+        <span class="w-8 h-px bg-[#e8a0b0]"></span>
+        Hello, I'm
+      </div>
+
+      <div>
+        <h1 class="font-display text-5xl md:text-6xl font-bold text-[#2a2a2a] leading-tight">
+          Sneha <span class="text-[#e8a0b0] italic">Kumari</span>
+        </h1>
+        <div class="mt-3 inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#e8a0b0] bg-white">
+          <span class="font-cursive text-xl text-[#2a2a2a]">Creative Designer</span>
+          <span class="text-[#e8a0b0]">♥</span>
+        </div>
+      </div>
+
+      <p class="text-[#666] text-base leading-relaxed max-w-sm">
+        I craft meaningful visuals and beautiful experiences that make ideas come alive.
+      </p>
+
+      <div class="flex items-center gap-2 text-sm text-[#666]">
+        <span class="w-8 h-8 rounded-lg bg-[#f4e0e4] flex items-center justify-center text-xs">✉</span>
+        <span>kumarisneha1318&#64;gmail.com</span>
+      </div>
+
+      <div class="flex items-center gap-4 mt-2">
+        <button
+          class="flex items-center gap-2 bg-[#2a2a2a] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#444] transition-all hover:scale-105 active:scale-95"
+          (click)="scrollTo('projects')">
+          View My Work →
+        </button>
+        <button
+          class="flex items-center gap-2 border border-[#ccc] text-[#2a2a2a] px-6 py-3 rounded-full text-sm font-medium hover:border-[#e8a0b0] transition-all hover:scale-105 active:scale-95">
+          Download CV ↓
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="flex justify-center relative animate-fade-up delay-300">
+      <!-- Decorative background blob -->
+      <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#fce8ec] via-[#f0e6f8] to-[#fce8ec] opacity-60 blur-2xl scale-90"></div>
+
+      <div class="relative rounded-3xl overflow-hidden border border-[#f0dce4] shadow-xl bg-gradient-to-br from-[#fce8ec] to-[#efe6f8] w-full max-w-sm aspect-square flex items-center justify-center">
+        <!-- Sparkles -->
+        <span class="absolute top-6 right-8 text-2xl animate-float text-[#e8a0b0]">✦</span>
+        <span class="absolute top-16 left-6 text-base animate-float delay-200 text-[#c9b8e8]">✦</span>
+        <span class="absolute bottom-10 right-6 text-sm animate-float delay-400 text-[#e8a0b0]">♥</span>
+
+        <!-- Illustration Placeholder (stylized avatar) -->
+        <div class="flex flex-col items-center gap-2 py-8">
+          <div class="w-52 h-52 rounded-full bg-gradient-to-br from-[#c9b8e8] to-[#e8a0b0] flex items-center justify-center text-white text-8xl shadow-lg animate-pulse-soft">
+            🎨
+          </div>
+          <div class="mt-4 bg-white rounded-2xl px-5 py-3 shadow text-center">
+            <p class="text-xs text-[#e8a0b0] font-medium">✏ since 2020</p>
+            <p class="text-sm text-[#2a2a2a] font-medium mt-1">Designing with heart, one<br>gentle pixel at a time.</p>
+          </div>
+        </div>
+
+        <!-- Color palette deco -->
+        <div class="absolute top-4 right-4 bg-white rounded-xl p-2 shadow grid grid-cols-3 gap-1">
+          <span class="w-4 h-4 rounded-full bg-[#f4a7b9]"></span>
+          <span class="w-4 h-4 rounded-full bg-[#c9b8e8]"></span>
+          <span class="w-4 h-4 rounded-full bg-[#f9d56e]"></span>
+          <span class="w-4 h-4 rounded-full bg-[#a8d8a8]"></span>
+          <span class="w-4 h-4 rounded-full bg-[#87ceeb]"></span>
+          <span class="w-4 h-4 rounded-full bg-[#f4b8c8]"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

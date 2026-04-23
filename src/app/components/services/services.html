@@ -1,0 +1,27 @@
+<section id="services" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-14 animate-fade-up">
+      <p class="font-cursive text-lg text-[#e8a0b0] mb-2">what I do</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-[#2a2a2a]">Services I offer</h2>
+      <p class="text-[#888] mt-3 text-base max-w-md mx-auto">
+        A thoughtful set of design services crafted to help brands tell warmer, more human stories.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      @for (service of services; track service.title) {
+        <div class="group border border-[#f0e0e0] rounded-2xl p-6 hover:shadow-lg hover:border-[#e8a0b0] transition-all duration-300 cursor-default hover:-translate-y-0.5">
+          <div class="w-12 h-12 rounded-xl {{ service.color }} flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            {{ service.icon }}
+          </div>
+          <h3 class="font-display text-lg font-semibold text-[#2a2a2a] mb-2">{{ service.title }}</h3>
+          <p class="text-sm text-[#888] leading-relaxed">{{ service.desc }}</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

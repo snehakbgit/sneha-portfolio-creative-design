@@ -1,0 +1,73 @@
+<section id="about" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+    <!-- Left: Gallery / Visual collage -->
+    <div class="relative flex gap-3 animate-fade-up">
+      <!-- Main pink card -->
+      <div class="flex-1 flex flex-col gap-3">
+        <!-- Toggle mock -->
+        <!-- <div class="flex items-center gap-2">
+          <div class="w-10 h-5 rounded-full bg-[#2a2a2a] relative flex items-center px-0.5">
+            <span class="w-4 h-4 rounded-full bg-white absolute right-0.5"></span>
+          </div>
+          <div class="flex gap-1">
+            <span class="px-2 py-0.5 rounded-full bg-[#f0e0e0] text-xs text-[#888]">summary</span>
+          </div>
+        </div> -->
+
+        <!-- Photo grid tiles -->
+        <div class="grid grid-cols-2 gap-2">
+          @for (item of galleryItems; track item.label) {
+            <div class="rounded-2xl bg-gradient-to-br from-[#fce8ec] to-[#efe6f8] aspect-square flex flex-col items-center justify-center gap-1 text-3xl hover:scale-105 transition-transform cursor-default shadow-sm">
+              {{ item.emoji }}
+              <span class="text-xs text-[#888]">{{ item.label }}</span>
+            </div>
+          }
+        </div>
+
+        <!-- Bottom thumbnails -->
+        <div class="flex gap-2">
+          <div class="rounded-xl bg-[#fce8ec] w-14 h-14 flex items-center justify-center text-xl shadow-sm">🌸</div>
+          <div class="rounded-xl bg-[#efe6f8] w-14 h-14 flex items-center justify-center text-xl shadow-sm">💜</div>
+        </div>
+      </div>
+
+      <!-- Pink gradient card -->
+      <div class="w-36 rounded-3xl bg-gradient-to-b from-[#fce8ec] to-[#d4b8e8] flex-shrink-0 relative">
+        <!-- Quote card at bottom -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-40 bg-white rounded-2xl shadow-lg p-3 text-center">
+          <p class="text-xs text-[#e8a0b0] font-medium">✏ since 2020</p>
+          <p class="text-xs text-[#2a2a2a] mt-1 leading-relaxed">Designing with heart, one gentle pixel at a time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: About text -->
+    <div class="animate-fade-up delay-200 flex flex-col gap-5">
+      <div>
+        <p class="font-cursive text-lg text-[#e8a0b0] mb-1">about me</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#2a2a2a]">A little about me</h2>
+      </div>
+
+      <p class="text-[#666] text-base leading-relaxed">
+        Hi! I'm Sneha, a multidisciplinary designer who loves turning fuzzy ideas into warm, tangible stories.
+        My work lives at the intersection of illustration, branding and thoughtful interface design.
+      </p>
+      <p class="text-[#666] text-base leading-relaxed">
+        When I'm not sketching, you'll find me curating color palettes, journaling, or chasing soft sunsets for
+        inspiration. Every pixel I place has a little bit of heart in it.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+        @for (stat of stats; track stat.label) {
+          <div class="border border-[#f0e0e0] rounded-2xl p-4 text-center hover:border-[#e8a0b0] hover:shadow-md transition-all cursor-default">
+            <p class="font-display text-2xl font-bold text-[#2a2a2a]">{{ stat.value }}</p>
+            <p class="text-xs text-[#999] mt-1">{{ stat.label }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

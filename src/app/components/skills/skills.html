@@ -1,0 +1,64 @@
+<section id="skills" class="py-24 px-6 section-bg">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-14 animate-fade-up">
+      <p class="font-cursive text-lg text-[#e8a0b0] mb-2">capabilities</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-[#2a2a2a]">Skills &amp; Tools</h2>
+      <p class="text-[#888] mt-3 text-base max-w-md mx-auto">
+        A cozy toolkit I reach for, mixed with the craft I've practiced over the years.
+      </p>
+    </div>
+
+    <!-- Two columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Tools Card -->
+      <div class="bg-white border border-[#f0e0e0] rounded-2xl p-7 hover:shadow-md transition-shadow">
+        <h3 class="font-medium text-[#2a2a2a] mb-6 flex items-center gap-2">
+          <span class="text-lg">🧰</span> Tools
+        </h3>
+        <div class="flex flex-col gap-5">
+          @for (tool of tools; track tool.name) {
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-[#444]">{{ tool.name }}</span>
+                <span class="text-[#aaa]">{{ tool.pct }}%</span>
+              </div>
+              <div class="w-full h-1.5 bg-[#f0e0e8] rounded-full overflow-hidden">
+                <div
+                  class="h-full rounded-full bg-gradient-to-r from-[#c9b8e8] to-[#e8a0b0] transition-all duration-1000 ease-out"
+                  [style.width]="animated ? tool.pct + '%' : '0%'">
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Craft Card -->
+      <div class="bg-white border border-[#f0e0e0] rounded-2xl p-7 hover:shadow-md transition-shadow">
+        <h3 class="font-medium text-[#2a2a2a] mb-6 flex items-center gap-2">
+          <span class="text-lg">✨</span> Craft
+        </h3>
+        <div class="flex flex-col gap-5">
+          @for (craft of crafts; track craft.name) {
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-[#444]">{{ craft.name }}</span>
+                <span class="text-[#aaa]">{{ craft.pct }}%</span>
+              </div>
+              <div class="w-full h-1.5 bg-[#f0e0e8] rounded-full overflow-hidden">
+                <div
+                  class="h-full rounded-full bg-gradient-to-r from-[#c9b8e8] to-[#e8a0b0] transition-all duration-1000 ease-out"
+                  [style.width]="animated ? craft.pct + '%' : '0%'">
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

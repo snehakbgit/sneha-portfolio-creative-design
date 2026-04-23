@@ -1,0 +1,75 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [class.shadow-md]="scrolled()"
+  [class.bg-white]="scrolled()"
+  [class.bg-transparent]="!scrolled()">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="font-cursive text-2xl text-[#2a2a2a] flex items-center gap-1 cursor-pointer"
+         (click)="scrollTo('home')">
+      Sneha
+      <span class="text-[#e8a0b0] text-xl">♥</span>
+    </div>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-[#2a2a2a]">
+      @for (link of navLinks; track link) {
+        <li
+          class="cursor-pointer relative group hover:text-[#c9b8e8] transition-colors duration-200"
+          (click)="scrollTo(link)">
+          {{ link }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e8a0b0] rounded transition-all duration-300 group-hover:w-full"></span>
+        </li>
+      }
+    </ul>
+
+    <!-- Right Controls -->
+    <div class="flex items-center gap-3">
+      <!-- Dark Mode Toggle -->
+      <button
+        class="w-12 h-6 rounded-full border-2 border-[#d0d0d0] bg-white relative transition-all duration-300 hover:border-[#e8a0b0]"
+        (click)="toggleTheme()" title="Toggle theme">
+        <span
+          class="absolute top-0.5 w-4 h-4 rounded-full bg-[#2a2a2a] transition-all duration-300"
+          [class.left-0.5]="!isDark()"
+          [class.left-6]="isDark()">
+        </span>
+      </button>
+
+      <!-- Let's Connect -->
+      <button
+        class="hidden md:flex items-center gap-2 bg-[#2a2a2a] text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-[#444] transition-all duration-200"
+        (click)="scrollTo('contact')">
+        Let's Connect
+        <span>✈</span>
+      </button>
+
+      <!-- Hamburger -->
+      <button class="md:hidden flex flex-col gap-1.5 p-1" (click)="toggleMenu()">
+        <span class="w-5 h-0.5 bg-[#2a2a2a] rounded transition-all duration-300"
+              [class.rotate-45]="menuOpen()" [class.translate-y-2]="menuOpen()"></span>
+        <span class="w-5 h-0.5 bg-[#2a2a2a] rounded transition-all duration-300"
+              [class.opacity-0]="menuOpen()"></span>
+        <span class="w-5 h-0.5 bg-[#2a2a2a] rounded transition-all duration-300"
+              [class.-rotate-45]="menuOpen()" [class.-translate-y-2]="menuOpen()"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (menuOpen()) {
+    <div class="md:hidden bg-white border-t border-[#f0e0e0] px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      @for (link of navLinks; track link) {
+        <span class="cursor-pointer hover:text-[#e8a0b0] transition-colors" (click)="scrollTo(link)">
+          {{ link }}
+        </span>
+      }
+      <button
+        class="flex items-center gap-2 bg-[#2a2a2a] text-white text-sm font-medium px-5 py-2.5 rounded-full w-fit hover:bg-[#444] transition-all"
+        (click)="scrollTo('contact')">
+        Let's Connect ✈
+      </button>
+    </div>
+  }
+</nav>

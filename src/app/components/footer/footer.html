@@ -1,0 +1,47 @@
+<footer class="bg-[#fdf6f0] border-t border-[#f0e0e0] py-12 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Brand -->
+    <div class="flex flex-col gap-3">
+      <div class="font-cursive text-2xl text-[#2a2a2a] flex items-center gap-1">
+        Sneha <span class="text-[#e8a0b0]">♥</span>
+      </div>
+      <p class="text-sm text-[#888] max-w-xs leading-relaxed">
+        Crafting soft, meaningful visuals that make brands feel like home.
+        Currently open for thoughtful collaborations.
+      </p>
+    </div>
+
+    <!-- Navigate -->
+    <div>
+      <p class="text-xs text-[#aaa] tracking-widest uppercase mb-4">Navigate</p>
+      <ul class="flex flex-col gap-2">
+        @for (link of navLinks; track link) {
+          <li
+            class="text-sm text-[#555] cursor-pointer hover:text-[#e8a0b0] transition-colors"
+            (click)="scrollTo(link)">
+            {{ link }}
+          </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Say Hello -->
+    <div>
+      <p class="text-xs text-[#aaa] tracking-widest uppercase mb-4">Say Hello</p>
+      <p class="text-sm text-[#555] mb-4">kumarisneha1318&#64;gmail.com</p>
+      <div class="flex gap-3">
+        <button class="w-9 h-9 rounded-full border border-[#eee] flex items-center justify-center text-base hover:border-[#e8a0b0] hover:bg-[#fce8ec] transition-all">📸</button>
+        <button class="w-9 h-9 rounded-full border border-[#eee] flex items-center justify-center text-base hover:border-[#e8a0b0] hover:bg-[#fce8ec] transition-all">🎨</button>
+        <button class="w-9 h-9 rounded-full border border-[#eee] flex items-center justify-center text-base hover:border-[#e8a0b0] hover:bg-[#fce8ec] transition-all">🐦</button>
+        <button class="w-9 h-9 rounded-full border border-[#eee] flex items-center justify-center text-base hover:border-[#e8a0b0] hover:bg-[#fce8ec] transition-all">💼</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-[#f0e0e0] flex flex-col md:flex-row justify-between items-center gap-2">
+    <p class="text-xs text-[#bbb]">© 2024 Sneha Kumari. Designed with ♥</p>
+    <p class="text-xs text-[#bbb]">Built with Angular & Tailwind CSS</p>
+  </div>
+</footer>

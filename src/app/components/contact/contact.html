@@ -1,0 +1,97 @@
+<section id="contact" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-14 animate-fade-up">
+      <p class="font-cursive text-lg text-[#e8a0b0] mb-2">let's talk</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-[#2a2a2a]">Say hi, send an idea</h2>
+      <p class="text-[#888] mt-3 text-base max-w-md mx-auto">
+        Whether it's a tiny brand sparkle or a full-fledged product, I'd love to hear your story.
+      </p>
+    </div>
+
+    <!-- Two column layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Stay in touch card -->
+      <div class="border border-[#f0e0e0] rounded-2xl p-7 flex flex-col gap-5">
+        <div>
+          <h3 class="font-display text-xl font-semibold text-[#2a2a2a]">Stay in touch</h3>
+          <p class="text-sm text-[#888] mt-1">I usually respond within 24 hours. Coffee chats welcome ☕</p>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-3 text-sm text-[#555]">
+            <span class="w-8 h-8 rounded-lg bg-[#fce8ec] flex items-center justify-center">✉</span>
+            kumarisneha1318&#64;gmail.com
+          </div>
+          <div class="flex items-center gap-3 text-sm text-[#555]">
+            <span class="w-8 h-8 rounded-lg bg-[#fce8ec] flex items-center justify-center">📍</span>
+            India
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs text-[#aaa] tracking-widest uppercase mb-3">Follow Along</p>
+          <div class="flex gap-3">
+            @for (social of socials; track social.label) {
+              <button
+                class="w-10 h-10 rounded-full border border-[#eee] flex items-center justify-center text-base hover:border-[#e8a0b0] hover:bg-[#fce8ec] transition-all"
+                [title]="social.label">
+                {{ social.icon }}
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="border border-[#f0e0e0] rounded-2xl p-7">
+        @if (submitted()) {
+          <div class="flex flex-col items-center justify-center h-full gap-3 text-center py-8">
+            <span class="text-4xl animate-pulse-soft">💌</span>
+            <p class="font-display text-lg font-semibold text-[#2a2a2a]">Message sent!</p>
+            <p class="text-sm text-[#888]">Thank you! I'll get back to you soon.</p>
+          </div>
+        } @else {
+          <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs text-[#888] mb-1 block">Your Name</label>
+                <input
+                  [(ngModel)]="form.name"
+                  placeholder="Jane Doe"
+                  class="w-full border border-[#eee] rounded-xl px-4 py-2.5 text-sm outline-none focus:border-[#e8a0b0] transition-colors" />
+              </div>
+              <div>
+                <label class="text-xs text-[#888] mb-1 block">Email</label>
+                <input
+                  [(ngModel)]="form.email"
+                  type="email"
+                  placeholder="jane@studio.com"
+                  class="w-full border border-[#eee] rounded-xl px-4 py-2.5 text-sm outline-none focus:border-[#e8a0b0] transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label class="text-xs text-[#888] mb-1 block">Your Message</label>
+              <textarea
+                [(ngModel)]="form.message"
+                rows="5"
+                placeholder="Tell me about your project…"
+                class="w-full border border-[#eee] rounded-xl px-4 py-2.5 text-sm outline-none focus:border-[#e8a0b0] transition-colors resize-none">
+              </textarea>
+            </div>
+            <button
+              (click)="onSubmit()"
+              [disabled]="loading()"
+              class="flex items-center gap-2 bg-[#2a2a2a] text-white px-6 py-3 rounded-full text-sm font-medium w-fit hover:bg-[#444] transition-all hover:scale-105 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+              @if (loading()) { <span>Sending…</span> }
+              @else { <span>Send Message ✈</span> }
+            </button>
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>

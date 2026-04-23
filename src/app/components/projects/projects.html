@@ -1,0 +1,66 @@
+<section id="projects" class="py-24 px-6 section-bg">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-14 animate-fade-up">
+      <div class="flex items-center justify-center gap-3 text-[#e8a0b0] text-sm tracking-widest mb-3">
+        <span class="w-8 h-px bg-[#e8a0b0]"></span>
+        my work
+        <span class="w-8 h-px bg-[#e8a0b0]"></span>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-[#2a2a2a]">Featured Projects</h2>
+      <p class="text-[#888] mt-3 text-base max-w-lg mx-auto">
+        A curated peek into the stories, brands and interfaces I've had the joy of designing.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      @for (project of projects; track project.title; let i = $index) {
+        <div
+          class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
+          (mouseenter)="hoveredIndex.set(i)"
+          (mouseleave)="hoveredIndex.set(null)">
+
+          <!-- Image area -->
+          <div class="relative aspect-[4/3] bg-gradient-to-br {{ project.color }} flex items-center justify-center text-6xl overflow-hidden">
+            <span class="group-hover:scale-110 transition-transform duration-500 select-none">{{ project.emoji }}</span>
+
+            <!-- Category badge -->
+            <span class="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm text-[#2a2a2a]">
+              {{ project.category }}
+            </span>
+
+            <!-- Hover overlay -->
+            <div class="absolute inset-0 bg-[#2a2a2a]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="text-white text-sm font-medium border border-white rounded-full px-4 py-2">View Project →</span>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="p-4">
+            <h3 class="font-display text-base font-semibold text-[#2a2a2a]">{{ project.title }}</h3>
+            <p class="text-xs text-[#999] mt-1 flex items-center gap-1">
+              <span>📅</span> {{ project.date }}
+            </p>
+          </div>
+        </div>
+      }
+
+      <!-- View All -->
+      <div class="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2">
+        <button class="w-24 h-24 rounded-full bg-[#c9b8e8] text-white text-xs font-medium flex items-center justify-center text-center leading-tight hover:bg-[#b8a4d4] transition-colors hover:scale-110 active:scale-95">
+          View All<br>Projects
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile View All -->
+    <div class="flex justify-center mt-8 lg:hidden">
+      <button class="border border-[#e8a0b0] text-[#2a2a2a] px-8 py-3 rounded-full text-sm font-medium hover:bg-[#fce8ec] transition-colors">
+        View All Projects →
+      </button>
+    </div>
+
+  </div>
+</section>

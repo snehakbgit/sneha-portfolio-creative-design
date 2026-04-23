@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #fdf6f0;
+  --blush: #fce8ec;
+  --rose: #e8a0b0;
+  --pink-soft: #f4b8c8;
+  --lavender: #c9b8e8;
+  --purple-soft: #b8a4d4;
+  --dark: #2a2a2a;
+  --muted: #6b6b6b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-cursive { font-family: 'Dancing Script', cursive; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes fillBar {
+  from { width: 0; }
+}
+
+.animate-fade-up  { animation: fadeInUp 0.7s ease both; }
+.animate-float    { animation: floatY 3s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+.skill-bar {
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #c9b8e8, #e8a0b0);
+  animation: fillBar 1.2s ease both;
+}
+
+/* Progress bar fill widths */
+.w-pct-95 { width: 95%; }
+.w-pct-92 { width: 92%; }
+.w-pct-90 { width: 90%; }
+.w-pct-88 { width: 88%; }
+.w-pct-94 { width: 94%; }
+.w-pct-93 { width: 93%; }
+.w-pct-87 { width: 87%; }
+
+.section-bg { background: #fdf6f0; }
+.card-bg     { background: #ffffff; }
